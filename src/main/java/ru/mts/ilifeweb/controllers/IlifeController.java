@@ -26,7 +26,7 @@ public class IlifeController {
         return "HELLO BABY";
     }
 
-    @RequestMapping(value = "/pulsup", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/pulseup", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<String> send() throws JSONException {
 
         JSONObject body = new JSONObject();
