@@ -27,7 +27,7 @@ public class IlifeController {
     }
 
     @RequestMapping(value = "/pulseup", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> send() throws JSONException {
+    public ResponseEntity<String> sendHighPulse() throws JSONException {
 
         JSONObject body = new JSONObject();
         body.put("to", "/topics/" + TOPIC);
@@ -48,7 +48,7 @@ public class IlifeController {
     }
 
     @RequestMapping(value = "/pulselow", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> send() throws JSONException {
+    public ResponseEntity<String> sendLowPulse() throws JSONException {
 
         JSONObject body = new JSONObject();
         body.put("to", "/topics/" + TOPIC);
@@ -69,7 +69,7 @@ public class IlifeController {
     }
     
     @RequestMapping(value = "/pulsenormal", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> send() throws JSONException {
+    public ResponseEntity<String> sendNormalPulse() throws JSONException {
 
         JSONObject body = new JSONObject();
         body.put("to", "/topics/" + TOPIC);
@@ -90,7 +90,7 @@ public class IlifeController {
     }
     
     @RequestMapping(value = "/fell", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> send() throws JSONException {
+    public ResponseEntity<String> sendFell() throws JSONException {
 
         JSONObject body = new JSONObject();
         body.put("to", "/topics/" + TOPIC);
