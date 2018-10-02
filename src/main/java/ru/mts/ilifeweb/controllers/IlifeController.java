@@ -47,6 +47,70 @@ public class IlifeController {
         return sendMsg(body.toString());
     }
 
+    @RequestMapping(value = "/pulselow", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<String> send() throws JSONException {
+
+        JSONObject body = new JSONObject();
+        body.put("to", "/topics/" + TOPIC);
+        body.put("priority", "high");
+
+        JSONObject notification = new JSONObject();
+        notification.put("title", "Pulse Low");
+        notification.put("body", "PulsLow");
+
+        JSONObject data = new JSONObject();
+        data.put("Key-1", "JSA Data 1");
+        data.put("Key-2", "JSA Data 2");
+
+        body.put("notification", notification);
+        body.put("data", data);
+
+        return sendMsg(body.toString());
+    }
+    
+    @RequestMapping(value = "/pulsenormal", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<String> send() throws JSONException {
+
+        JSONObject body = new JSONObject();
+        body.put("to", "/topics/" + TOPIC);
+        body.put("priority", "high");
+
+        JSONObject notification = new JSONObject();
+        notification.put("title", "Pulse normal");
+        notification.put("body", "PulsNormal");
+
+        JSONObject data = new JSONObject();
+        data.put("Key-1", "JSA Data 1");
+        data.put("Key-2", "JSA Data 2");
+
+        body.put("notification", notification);
+        body.put("data", data);
+
+        return sendMsg(body.toString());
+    }
+    
+    @RequestMapping(value = "/fell", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<String> send() throws JSONException {
+
+        JSONObject body = new JSONObject();
+        body.put("to", "/topics/" + TOPIC);
+        body.put("priority", "high");
+
+        JSONObject notification = new JSONObject();
+        notification.put("title", "Fell");
+        notification.put("body", "Fell");
+
+        JSONObject data = new JSONObject();
+        data.put("Key-1", "JSA Data 1");
+        data.put("Key-2", "JSA Data 2");
+
+        body.put("notification", notification);
+        body.put("data", data);
+
+        return sendMsg(body.toString());
+    }
+    
+    
     private ResponseEntity<String> sendMsg(String body){
         HttpEntity<String> request = new HttpEntity<>(body);
 
