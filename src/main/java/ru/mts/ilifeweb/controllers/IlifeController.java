@@ -50,22 +50,24 @@ public class IlifeController {
     @RequestMapping(value = "/pulselow", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<String> sendLowPulse() throws JSONException {
 
-        JSONObject body = new JSONObject();
-        body.put("to", "/topics/" + TOPIC);
-        body.put("priority", "high");
+            JSONObject message = new JSONObject();
+            JSONObject body = new JSONObject();
+            body.put("to", "/topics/" + "TOPIK");
+            body.put("priority", "high");
 
-        JSONObject notification = new JSONObject();
-        notification.put("title", "Pulse Low");
-        notification.put("body", "PulsLow");
+            JSONObject notification = new JSONObject();
+            notification.put("title", "Pulse high");
+            notification.put("body", "PulsUp");
 
-        JSONObject data = new JSONObject();
-        data.put("Key-1", "JSA Data 1");
-        data.put("Key-2", "JSA Data 2");
+            JSONObject data = new JSONObject();
+            data.put("Key-1", "JSA Data 1");
+            data.put("Key-2", "JSA Data 2");
 
-        body.put("notification", notification);
-        body.put("data", data);
+            message.put("message", body);
+            body.put("notification", notification);
+            body.put("data", data);
 
-        return sendMsg(body.toString());
+        return sendMsg(message.toString());
     }
     
     @RequestMapping(value = "/pulsenormal", method = RequestMethod.GET, produces = "application/json")
