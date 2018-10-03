@@ -101,7 +101,7 @@ public class IlifeController {
         notification.put("body", "Fell");
 
         JSONObject data = new JSONObject();
-        data.put("Position", "Fell");
+        data.put("Action", "Fell");
 
         body.put("notification", notification);
         body.put("data", data);
