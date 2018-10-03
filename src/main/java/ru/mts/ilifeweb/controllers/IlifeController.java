@@ -100,7 +100,7 @@ public class IlifeController {
         JSONObject data = new JSONObject();
         data.put("Action", "Fell");
 
-        body.put("notification", notification);
+      //  body.put("notification", notification);
         body.put("data", data);
        
         return sendMsg(body.toString());
