@@ -38,10 +38,9 @@ public class IlifeController {
         notification.put("body", "PulsUp");
 
         JSONObject data = new JSONObject();
-        data.put("Key-1", "JSA Data 1");
-        data.put("Key-2", "JSA Data 2");
+        data.put("Action", "HighPulse");
 
-        body.put("notification", notification);
+        //body.put("notification", notification);
         body.put("data", data);
 
         return sendMsg(body.toString());
@@ -60,11 +59,11 @@ public class IlifeController {
             notification.put("body", "PulsUp");
 
             JSONObject data = new JSONObject();
-            data.put("Key-1", "JSA Data 1");
-            data.put("Key-2", "JSA Data 2");
+            data.put("Action", "PulseLow");
+            //data.put("Key-2", "JSA Data 2");
 
             message.put("message", body);
-            body.put("notification", notification);
+         //   body.put("notification", notification);
             body.put("data", data);
 
         return sendMsg(message.toString());
@@ -82,10 +81,9 @@ public class IlifeController {
         notification.put("body", "PulsNormal");
 
         JSONObject data = new JSONObject();
-        data.put("Key-1", "JSA Data 1");
-        data.put("Key-2", "JSA Data 2");
-
-        body.put("notification", notification);
+        data.put("Action", "PulseNormal");
+     //   data.put("Key-2", "JSA Data 2");
+     //   body.put("notification", notification);
         body.put("data", data);
 
         return sendMsg(body.toString());
@@ -105,10 +103,9 @@ public class IlifeController {
         JSONObject data = new JSONObject();
         data.put("Position", "Fell");
 
+        body.put("notification", notification);
         body.put("data", data);
-      //  body.put("notification", notification);
-        
-
+       
         return sendMsg(body.toString());
     }
     
