@@ -94,8 +94,8 @@ public class IlifeController {
         body.put("priority", "high");
 
         JSONObject notification = new JSONObject();
-        notification.put("title", "Fell");
-        notification.put("body", "Fell");
+        notification.put("title", "Бабуля упала");
+        notification.put("body", "Что то случилось с бабушкой");
 
         JSONObject data = new JSONObject();
         data.put("Action", "Fell");
