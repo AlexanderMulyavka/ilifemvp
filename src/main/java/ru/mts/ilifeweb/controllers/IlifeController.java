@@ -46,6 +46,27 @@ public class IlifeController {
         return sendMsg(body.toString());
     }
 
+    @RequestMapping(value = "/pulserefresh", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<String> sendRefreshPulse() throws JSONException {
+
+        JSONObject body = new JSONObject();
+        body.put("to", "/topics/" + TOPIC);
+        body.put("priority", "high");
+
+        JSONObject notification = new JSONObject();
+        notification.put("title", "Pulse high");
+        notification.put("body", "PulsUp");
+
+        JSONObject data = new JSONObject();
+        data.put("Action", "RefreshPulse");
+
+        //body.put("notification", notification);
+        body.put("data", data);
+
+        return sendMsg(body.toString());
+    }
+    
+    
     @RequestMapping(value = "/pulselow", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<String> sendLowPulse() throws JSONException {
 
