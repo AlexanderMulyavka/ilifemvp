@@ -108,7 +108,7 @@ public class IlifeController {
     }
     
     @RequestMapping(value = "/battery", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> sendFell(@RequestParam("lvl") int lvl) throws JSONException {
+    public ResponseEntity<String> sendBattery(@RequestParam("lvl") int lvl) throws JSONException {
 
         JSONObject body = new JSONObject();
         body.put("to", "/topics/" + TOPIC);
