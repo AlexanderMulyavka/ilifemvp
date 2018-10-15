@@ -107,6 +107,20 @@ public class IlifeController {
         return sendMsg(body.toString());
     }
     
+    @RequestMapping(value = "/battery", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<String> sendFell(@RequestParam("lvl") int lvl) throws JSONException {
+
+        JSONObject body = new JSONObject();
+        body.put("to", "/topics/" + TOPIC);
+        body.put("priority", "high");
+
+        JSONObject data = new JSONObject();
+        data.put("Battery", lvl);
+        body.put("data", data);
+
+        return sendMsg(body.toString());
+    }
+    
     @RequestMapping(value = "/fell", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<String> sendFell() throws JSONException {
 
@@ -126,7 +140,6 @@ public class IlifeController {
        
         return sendMsg(body.toString());
     }
-    
     
     private ResponseEntity<String> sendMsg(String body){
         HttpEntity<String> request = new HttpEntity<>(body);
