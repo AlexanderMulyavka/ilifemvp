@@ -28,18 +28,15 @@ public class IlifeController {
     }
 
     @RequestMapping(value = "/pulseup", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<String> sendHighPulse() throws JSONException {
+    public ResponseEntity<String> sendHighPulse(@RequestParam("pulse") int pulse) throws JSONException {
 
         JSONObject body = new JSONObject();
         body.put("to", "/topics/" + TOPIC);
         body.put("priority", "high");
 
-        JSONObject notification = new JSONObject();
-        notification.put("title", "Pulse high");
-        notification.put("body", "PulsUp");
-
         JSONObject data = new JSONObject();
         data.put("Action", "HighPulse");
+        data.put("Pulse", pulse);
 
         //body.put("notification", notification);
         body.put("data", data);
