@@ -35,7 +35,6 @@ public class IlifeController {
         body.put("priority", "high");
 
         JSONObject data = new JSONObject();
-        data.put("Action", "HighPulse");
         data.put("Pulse", pulse);
         body.put("data", data);
 
